@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #6495ED;
+}
+
+/* Imagem da esquerda */
+#image-right {
+  max-width: 600px;
+  
+}
+
+.right-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Tudo que faz parte da div da esquerda  */
+.main-login {
+  width: 100vw;
+  height: 100vh;
+  margin:auto;
+  gap: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Caixa de login  */
+.image {
+  padding: 10px;
+}
+
+.cardLogin {
+  background: #fff;
+  width: 300px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 25px 35px;
+}
+
+/* Formulario de login */
+.form {
+  width: 100%;
+  padding: 10px;
+  margin: 0px;
+}
+
+.form label {
+  padding: 6px;
+}
+
+.Inputs {
+  padding: 7px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#inputEmail {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: #d1d1d1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 12pt;
+  box-sizing: border-box;
+}
+
+#inputSenha {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: #d1d1d1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  font-size: 12pt;
+  box-sizing: border-box;
+}
+
+/* Esqueceu sua senha */
+#forgotPassword-box {
+  padding-left: 17px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#forgotPassword-box a {
+  text-decoration: none;
+  color: #3336ecde;
+}
+
+#forgotPassword-box a:hover {
+  opacity: 0.9;
+  text-decoration: underline;
+}
+
+/* Botão de login */
+.btnLogin-box {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#btnLogin {
+  width: 50%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  background: #3336ecde;
+  box-shadow: rgba(0, 0, 0, 0.493) 0px 3px 6px, rgba(0, 0, 0, 0.493) 0px 3px 6px;
+  font-size: 12pt;
+}
+
+#btnLogin:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/* Divisao dos logins (tradicional & socialmedia) */
+hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/* Rede sociais */
+.social-media {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.social-media ul {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.social-media ul li {
+  list-style: none;
+  padding: 20px;
+}
+
+.social-media ul li button {
+  border-radius: 50%;
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.75);
+  border-width: 1px;
+  height: 60px;
+  width: 60px;
+}
+
+.social-media ul li button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
