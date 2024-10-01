@@ -20,93 +20,68 @@
     <title>Carrinho</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark"
-      style="color: white"
-    >
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="PgnInicial.html"
-                rel="prev"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categorias
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Action</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Carrinho.html" rel="prev">Carrinho</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Procurar..."
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Procurar
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
+ <!-- HEADER -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="color: white">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="PgnInicial.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Categorias
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Action</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Carrinho.html" rel="next">Carrinho</a>
+        </li>
+
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Procurar..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Procurar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- HEADER -->
 
     <section id="produtos">
-      <div class="container">
+      <div class="container ">
         <h1>Carrinho</h1>
 
-        <ul id="menu-carrinho">
+        <ul class="text-dark" id="menu-carrinho">
          <li>#</li>
          <li>Nome do produto</li>
          <li>Preço</li>
          <li>Quantidade</li>
         </ul>
 
-        <hr>
+        <hr class="bg-dark">
       
       </div>
     </section>
 
-    <footer>
-      <h2 id="footer-identifcation">&copy;AnthonyEncarnacao</h2>
-  
-      <ul id="social-media">
-        <li><a href="https://www.linkedin.com/in/anthonyencarna%C3%A7%C3%A3o/"><img
-              src="./imgs/logotipo-do-linkedin.png" /></a></li>
-        <li><a href="https://github.com/Tonyynf"><img src="./imgs/github (1).png" /></a></li>
-    </footer>
+      <!-- FOOTER -->
+  <footer class="text-center text-lg-start fixed-bottom bg-body-tertiary text-muted bg-dark">
+
+    <div class="bg-dark text-center p-4 text-light">
+      © 2024 Copyright:
+      All rights reserved.
+    </div>
+
+  </footer>
+
   </body>
 </html>

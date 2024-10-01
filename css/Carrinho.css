@@ -1,13 +1,8 @@
-* {
-    margin: 0 auto;
-}
 
-body {
-    background-color: #4F4F4F;
-}
+
+
 
 h1{
-    color:#fff;
     padding: 20px;
     margin:0;
     font-size:50px;
@@ -16,7 +11,6 @@ hr{
     height: 2px;
     border: 0px;
     margin:0;
-    background-color: #fff;
 }
 .produtos{
     width: 90%;
@@ -31,7 +25,7 @@ hr{
 
 }
 .container{
-   
+
 }
 #menu-carrinho{
     display:flex; /*flex aqui - novo*/
@@ -42,63 +36,8 @@ hr{
 }
 #menu-carrinho li{
     display: inline-block;
-    color:#fff;
     padding:5px;
 }
 
 /* Footer */
-
-footer {
-    background: #212529;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px;
-    box-sizing: border-box;
-    bottom: 0;
-    margin:auto;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-#footer-identifcation {
-    color: #fff;
-    margin: auto;
-    font: 20px arial, Medium sans-serif;
-}
-
-#social-media {
-    list-style: none;
-    font: 20px arial, Medium sans-serif;
-    transform: uppercase;
-    display: flex;
-    margin: auto;
-    align-items: center;
-}
-
-#social-media ul {
-    padding:0;
-}
-
-#social-media li {
-    font: Medium;
-    color: #fff;
-    /*isso */
-    margin: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(1); /* Defina a escala inicial */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-#social-media li:hover {
-    color: #0B00FF;
-    cursor: pointer;
-    transform: scale(1.10);
-    transition: .2s;
-    cursor: pointer;
-}
+ /* ADAPTAR CSS PARA BOOTSTRAP E FAZER FUNÇÕES */
