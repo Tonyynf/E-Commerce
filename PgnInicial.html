@@ -25,17 +25,22 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Categorias
+              Carrinho
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Action</a>
+              <button onclick="removeItem()">remover</button>
+              <ul id="carrinho">
+
+
+              </ul>
             </div>
           </li>
+          
+          <!--
           <li class="nav-item">
             <a class="nav-link" href="Carrinho.html" rel="next">Carrinho</a>
           </li>
+        -->
 
         </ul>
         <form class="d-flex">
@@ -105,7 +110,7 @@
               <h5 class="card-title">Bola de Basquete Spalding Streetball</h5>
               <p class="card-text">R$ 121,90</p>
             </div>
-            <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a href="#" onclick="addItem(0)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 2 -->
@@ -116,7 +121,7 @@
               <h5 class="card-title">Chinelo Slide Infantil Rider Pump NBA II</h5>
               <p class="card-text">R$ 64,99</p>
             </div>
-            <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a href="#" onclick="addItem(1)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 3 -->
@@ -127,7 +132,7 @@
               <h5 class="card-title">Moletom NBA Lakers As Tartarugas Ninjas</h5>
               <p class="card-text">R$ 379,99</p>
             </div>
-            <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a href="#" onclick="addItem(2)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 4 -->
@@ -138,7 +143,7 @@
               <h5 class="card-title">NBA 2K24</h5>
               <p class="card-text">R$ 307,99</p>
             </div>
-            <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a href="#" onclick="addItem(3)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 5 -->
@@ -149,7 +154,7 @@
               <h5 class="card-title">Tênis Nike Kyrie Flytrap IV</h5>
               <p class="card-text">R$ 100,00</p>
             </div>
-            <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a href="#" onclick="addItem(4)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 6 -->
@@ -160,7 +165,7 @@
               <h5 class="card-title">Tênis Nike Air Force 1</h5>
               <p class="card-text">R$ 539,99</p>
             </div>
-            <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(5)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
       </div>
@@ -205,5 +210,38 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<script>
+
+
+  const produtos = [
+    { id: 0, nome: 'Bola de Basquete Spalding Streetball', preco: 121.90 },
+    { id: 1, nome: 'Chinelo Slide Infantil Rider Pump NBA II', preco: 64.99 },
+    { id: 2, nome: 'Moletom NBA Lakers As Tartarugas Ninjas', preco: 379.99 },
+    { id: 3, nome: 'NBA 2K24', preco: 307.99 },
+    { id: 4, nome: 'Tênis Nike Kyrie Flytrap IV', preco: 100.00 },
+    { id: 5, nome: 'Tênis Nike Air Force 1', preco: 539.99 }
+  ];
+
+  const carrinho = document.getElementById("carrinho");
+
+  function addItem(id) {
+    const produto = produtos[id];
+    if(produto){
+    const li = document.createElement('li');
+    li.innerHTML = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
+    carrinho.appendChild(li);
+  }else{
+    alert("Produto não encontrado");
+  }
+}
+
+  function removeItem() {
+    carrinho.removeChild(carrinho.firstChild);
+  }
+
+
+</script>
 
 </html>
