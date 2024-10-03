@@ -22,26 +22,6 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="PgnInicial.html">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Carrinho
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button onclick="removeItem()">remover</button>
-              <ul id="carrinho">
-
-
-              </ul>
-            </div>
-          </li>
-          
-          <!--
-          <li class="nav-item">
-            <a class="nav-link" href="Carrinho.html" rel="next">Carrinho</a>
-          </li>
-        -->
-
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Procurar..." aria-label="Search">
@@ -101,7 +81,8 @@
     <div class="container p-5">
 
       <h2 class="text-center">Produtos</h2>
-      <div class="row g-5">
+
+      <div class="row g-5 d-flex">
         <!-- Card 1 -->
         <div class="col-lg-4 col-sm-6 p-4">
           <div class="card h-100 p-3">
@@ -110,7 +91,7 @@
               <h5 class="card-title">Bola de Basquete Spalding Streetball</h5>
               <p class="card-text">R$ 121,90</p>
             </div>
-            <a href="#" onclick="addItem(0)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(0); imgItem(0)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 2 -->
@@ -121,7 +102,7 @@
               <h5 class="card-title">Chinelo Slide Infantil Rider Pump NBA II</h5>
               <p class="card-text">R$ 64,99</p>
             </div>
-            <a href="#" onclick="addItem(1)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(1); imgItem(1)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 3 -->
@@ -132,7 +113,7 @@
               <h5 class="card-title">Moletom NBA Lakers As Tartarugas Ninjas</h5>
               <p class="card-text">R$ 379,99</p>
             </div>
-            <a href="#" onclick="addItem(2)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(2); imgItem(2)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 4 -->
@@ -143,7 +124,7 @@
               <h5 class="card-title">NBA 2K24</h5>
               <p class="card-text">R$ 307,99</p>
             </div>
-            <a href="#" onclick="addItem(3)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(3); imgItem(3)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 5 -->
@@ -154,7 +135,7 @@
               <h5 class="card-title">Tênis Nike Kyrie Flytrap IV</h5>
               <p class="card-text">R$ 100,00</p>
             </div>
-            <a href="#" onclick="addItem(4)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(4); imgItem(4)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
         <!-- Card 6 -->
@@ -165,10 +146,23 @@
               <h5 class="card-title">Tênis Nike Air Force 1</h5>
               <p class="card-text">R$ 539,99</p>
             </div>
-            <a onclick="addItem(5)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+            <a onclick="addItem(5); imgItem(5)" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
           </div>
         </div>
       </div>
+
+      <div class="p-5">
+        <h2 class="text-center p-3">Carrinho</h2>
+        <div class="carrinho bg-light rounded-3">
+
+          <ul id="carrinho" class="list-unstyled">
+            
+          </ul>
+
+        </div>
+
+      </div>
+
     </div>
   </section>
   <!-- CONTENT -->
@@ -177,11 +171,11 @@
   <section class="container">
     <h2 class="text-center">Sobre nós</h2>
     <div class="d-flex flex-column flex-md-row p-2">
-      <!-- Div da Imagem -->
+
       <div class="d-flex justify-content-center p-3">
         <img src="./cardsImgs/..." alt="logo" class="img-fluid w-100 img-custom">
       </div>
-      <!-- Div do Texto -->
+
       <div class="d-flex align-items-center p-3">
         <p style="text-align: justify; font-size: 20px;">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, tortor et congue cursus, elit ligula
@@ -226,21 +220,86 @@
 
   const carrinho = document.getElementById("carrinho");
 
+
+
   function addItem(id) {
     const produto = produtos[id];
-    if(produto){
-    const li = document.createElement('li');
-    li.innerHTML = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
-    carrinho.appendChild(li);
-  }else{
-    alert("Produto não encontrado");
+    if (produto) {
+      const li = document.createElement('li');
+
+      let imgProduto;
+
+      switch (id) {
+        case 0:
+          imgProduto = "./cardsImgs/ballBasket.webp";
+          break;
+        case 1:
+          imgProduto = "./cardsImgs/chinelo.webp";
+          break;
+        case 2:
+          imgProduto = "./cardsImgs/moletom.webp";
+          break;
+        case 3:
+          imgProduto = "./cardsImgs/nba2k24.webp";
+          break;
+        case 4:
+          imgProduto = "./cardsImgs/nikeFlytrap.webp";
+          break;
+        case 5:
+          imgProduto = "./cardsImgs/nikeForce.webp";
+          break;
+        default:
+          li.innerHTML = "Imagem não encontrada";
+      }
+
+      li.innerHTML = `
+            <div class="d-flex align-items-center justify-content-between w-100 p-3 border-bottom">
+                <img src="${imgProduto}" alt="${produto.nome}" class="img-fluid rounded-3" style="width: 75px; height: 75px;">
+                <div class="d-flex justify-content-around flex-grow-1">
+                  ${produto.nome} 
+
+                  <button class="btn btn-primary">-</button> 
+
+                    <input id="form1" min="0" value="1" type="number"
+                        class="" />
+                        
+                   <button class="btn btn-primary">+</button>
+                   R$ ${produto.preco}
+
+                   </div>
+                <button class="btn btn-danger" onclick="removeItem(this)">X</button>
+            </div>
+      `;
+
+      carrinho.appendChild(li);
+    } else {
+      alert("Produto não encontrado");
+    }
   }
-}
+
+  function addQtd(){
+    const inputQtd = document.getElementById("form1");
+    let qtd = parseInt(inputQtd.value);
+    inputQtd += 1;
+
+    if(inputQtd < 1){
+      inputQtd = 1;
+    }
+
+  }
+
+  function removeQtd(){
+    const inputQtd = document.getElementById("form1").value;
+    inputQtd.value -= 1;
+
+    if(inputQtd < 1){
+      inputQtd = 1;
+    }
+  }
 
   function removeItem() {
     carrinho.removeChild(carrinho.firstChild);
   }
-
 
 </script>
 
