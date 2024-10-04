@@ -154,13 +154,9 @@
       <div class="p-5">
         <h2 class="text-center p-3">Carrinho</h2>
         <div class="carrinho bg-light rounded-3">
-
-          <ul id="carrinho" class="list-unstyled">
-            
-          </ul>
-
+          <ul id="carrinho" class="list-unstyled"></ul>
+          <h4 id="totalCarrinho" class="text-end">Total: R$ 0.00</h4>
         </div>
-
       </div>
 
     </div>
@@ -220,12 +216,20 @@
 
   const carrinho = document.getElementById("carrinho");
 
-
+  function atualizarTotal() {
+  const totalElement = document.getElementById("totalCarrinho");
+  totalElement.innerText = `Total: R$ ${totalCarrinho.toFixed(2)}`;
+  }
 
   function addItem(id) {
     const produto = produtos[id];
     if (produto) {
       const li = document.createElement('li');
+
+    const itemExistente = [...carrinho.children].find(li => li.innerText.includes(produto.nome));
+    if (itemExistente) {
+      return alert("Produto já adicionado ao carrinho.");
+    }
 
       let imgProduto;
 
@@ -272,6 +276,11 @@
       `;
 
       carrinho.appendChild(li);
+
+      let totalCarrinho = 0;
+
+      totalCarrinho += produto.preco;
+      atualizarTotal();
     } else {
       alert("Produto não encontrado");
     }
@@ -298,7 +307,11 @@
   }
 
   function removeItem() {
+ 
     carrinho.removeChild(carrinho.firstChild);
+
+    totalCarrinho -= preco; // Subtrai do total
+  atualizarTotal(); 
   }
 
 </script>
